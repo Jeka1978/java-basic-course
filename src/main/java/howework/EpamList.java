@@ -6,17 +6,17 @@ package howework;
 
 
 //todo you can use only array []
-public interface EpamList {
-    void add(Object o);
+public interface EpamList<E> {
+    void add(E o);
     int size();
 
     boolean remove(int i);
 
 
     //bonus
-    boolean remove(Object o);
+    boolean remove(E o);
 
-    Object get(int index);
+    E get(int index);
 
 
     void printAllContext();

@@ -5,12 +5,12 @@ import lombok.EqualsAndHashCode;
 /**
  * @author Evgeny Borisov
  */
-public class EpamListImpl implements EpamList {
+public class EpamListImpl<E> implements EpamList<E> {
 
     private Object[] content = new Object[0];
 
     @Override
-    public void add(Object o) {
+    public void add(E o) {
 
 
         Object[] objects = new Object[content.length + 1];
@@ -36,7 +36,7 @@ public class EpamListImpl implements EpamList {
     }
 
     @Override
-    public Object get(int index) {
+    public E get(int index) {
         return null;
     }
 

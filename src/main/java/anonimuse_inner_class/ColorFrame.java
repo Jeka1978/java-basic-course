@@ -9,7 +9,7 @@ import java.lang.ref.WeakReference;
  */
 public class ColorFrame extends JFrame {
 
-    public ColorFrame() {
+    public ColorFrame(int counter) {
 
 
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
