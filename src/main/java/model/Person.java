@@ -15,9 +15,11 @@ import java.io.Serializable;
 @NoArgsConstructor
 
 public class Person implements Serializable {
-    private static final long serialversionUID = 456;
+//    private static final long serialversionUID = 456;
     private String name;
     private transient int age;
+
+    public void a(){}
 
 
 
@@ -26,7 +28,6 @@ public class Person implements Serializable {
     public static void printName(){
         Person person = new Person();
         System.out.println(person.getName());
-        System.out.println(serialversionUID);
     }
 
     public Person withName(String name) {

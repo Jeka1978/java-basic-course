@@ -20,7 +20,7 @@ public class MainWhichWriteToFile {
         }
         file.createNewFile();
 
-        List<Object> list = List.of(new Employee(10), new Employee(20), new Person("Reut", 18));
+        List<Object> list = List.of(new Employee(10), new Employee(20));
 
 
         FileOutputStream fos = new FileOutputStream(file);
