@@ -5,6 +5,7 @@ import model.Person;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.util.List;
 
@@ -29,6 +30,11 @@ public class MainWhichWriteToFile {
         ObjectOutputStream oos = new ObjectOutputStream(fos);
 
         oos.writeObject(list);
+        try {
+            oos.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
 
     }
