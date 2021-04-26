@@ -1,11 +1,17 @@
 package enums.homework;
 
+import enums.Singleton;
+
 /**
  * @author Evgeny Borisov
  */
 public class HttpCodeHandler {
 
     public void handleHttpCode(int httpCode) {
+
+
+        Singleton.INSTANCE.doWork();
+
         //todo refactor and finish this method without using even one if statement
 
         if (httpCode > 100 && httpCode < 199) {

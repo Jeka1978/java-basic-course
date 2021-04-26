@@ -6,12 +6,12 @@ import java.io.Serializable;
  * @author Evgeny Borisov
  */
 public enum MaritalStatus implements Serializable {
-    SINGLE(1, "רווק"), MARRIED(2, "נשוי"), DIVORCED(5, "גרוש");
+    SINGLE(1, "רווק"), MARRIED(2, "נשוי"), DIVORCED(5, "גרוש"), UNKNOWN(10,"בבירור");
 
     private final int dbCode;
     private final String hebrewDesc;
 
-    MaritalStatus(int dbCode, String hebrewDesc) {
+   private MaritalStatus(int dbCode, String hebrewDesc) {
         System.out.println("enum was created " + hebrewDesc);
         this.hebrewDesc = hebrewDesc;
         this.dbCode = dbCode;
@@ -31,12 +31,14 @@ public enum MaritalStatus implements Serializable {
                 return status;
             }
         }
+//        return UNKNOWN;
         throw new IllegalStateException(dbCode + " not supported");
     }
 
 
     @Override
     public String toString() {
+
         return hebrewDesc;
     }
 }

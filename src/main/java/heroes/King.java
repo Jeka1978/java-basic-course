@@ -1,6 +1,7 @@
 package heroes;
 
 import lombok.experimental.Delegate;
+import my_spring.InjectRandomInt;
 
 import static heroes.RandomUtil.getNumberBetween;
 
@@ -8,6 +9,7 @@ import static heroes.RandomUtil.getNumberBetween;
  * @author Evgeny Borisov
  */
 public class King extends AbstractHero {
+
 
     @Delegate
     private WeaponStrategy weaponStrategy = new Sword(this);
