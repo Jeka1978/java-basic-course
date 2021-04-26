@@ -1,6 +1,5 @@
 package date_time;
 
-import org.joda.time.DateTime;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -15,7 +14,7 @@ import java.util.Locale;
 public class Main {
     public static void main(String[] args) {
 
-        DateTime dateTime = new DateTime();
+//        DateTime dateTime = new DateTime();   from joda time
         LocalTime now = LocalTime.now();
         LocalDate now1 = LocalDate.now();
         LocalDateTime now2 = LocalDateTime.now();
@@ -29,7 +28,6 @@ public class Main {
         System.out.println(chineese2);
         System.out.println(chineese3);
         System.out.println(chineese4);
-
 
 
         LocalDate myBirthday = LocalDate.of(1978, 3, 10);

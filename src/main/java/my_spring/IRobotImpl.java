@@ -5,11 +5,19 @@ import java.rmi.dgc.DGC;
 /**
  * @author Evgeny Borisov
  */
+@Singleton
 public class IRobotImpl implements IRobot {
 
 
-    private Speaker speaker = ObjectFactory.getInstance().createObject(Speaker.class);
-    private Cleaner cleaner = ObjectFactory.getInstance().createObject(Cleaner.class);
+    {
+        System.out.println("I robot was created");
+    }
+
+
+    @InjectByType
+    private Speaker speaker;
+    @InjectByType
+    private Cleaner cleaner;
 
     @Override
     public void cleanRoom(){
