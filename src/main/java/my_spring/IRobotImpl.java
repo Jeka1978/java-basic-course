@@ -1,5 +1,7 @@
 package my_spring;
 
+import lombok.Setter;
+
 import java.rmi.dgc.DGC;
 
 /**

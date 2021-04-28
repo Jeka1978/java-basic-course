@@ -5,8 +5,19 @@ package my_spring;
  */
 public class Main {
     public static void main(String[] args) {
-        IRobot iRobot = ObjectFactory.getInstance().createObject(IRobot.class);
-        IRobot iRobot2 = ObjectFactory.getInstance().createObject(IRobot.class);
+
+        JavaConfig config = JavaConfig.builder()
+                .ifc2ImplClass(Speaker.class, ConsoleSpeaker.class)
+                .packagesToScan("my_spring")
+                .build();
+
+
+        ApplicationContext context = new ApplicationContext(config);
+        context.getObject(IRobot.class);
+        context.getObject(IRobot.class);
+        IRobot iRobot = context.getObject(IRobot.class);
         iRobot.cleanRoom();
+
+
     }
 }
