@@ -1,0 +1,6 @@
+There are three categories of employees
+Juniors – salary <14000
+Middle – salary < 21000
+Seniors - >21000
+Create appropriative enum
+Write method which will receive list of companies and will categorize it by setting companyProfile property according to the most employee's seniorities
