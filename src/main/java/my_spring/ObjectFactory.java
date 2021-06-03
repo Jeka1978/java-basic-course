@@ -3,7 +3,10 @@ package my_spring;
 import lombok.SneakyThrows;
 import org.reflections.Reflections;
 
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
+import java.lang.reflect.Proxy;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -31,11 +34,26 @@ public class ObjectFactory {
     }
 
 
+    //cglib
     @SneakyThrows
     public <T> T createObject(Class<T> type) {
 
         T t = create(type);
         configure(t);
+        if (type.isAnnotationPresent(Benchmark.class)) {
+            return (T) Proxy.newProxyInstance(ClassLoader.getSystemClassLoader(), type.getInterfaces(), new InvocationHandler() {
+                @Override
+                public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+                    System.out.println("******** benchmark for method "+method.getName()+" started");
+                    long start = System.nanoTime();
+                    Object retVal = method.invoke(t, args);
+                    long end = System.nanoTime();
+                    System.out.println(end-start);
+                    System.out.println("******** benchmark for method "+method.getName()+" ended");
+                    return retVal;
+                }
+            });
+        }
 
 
         return t;

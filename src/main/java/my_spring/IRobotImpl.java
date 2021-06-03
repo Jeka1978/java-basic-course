@@ -8,6 +8,7 @@ import java.rmi.dgc.DGC;
  * @author Evgeny Borisov
  */
 @Singleton
+@Benchmark
 public class IRobotImpl implements IRobot {
 
 

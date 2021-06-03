@@ -8,6 +8,7 @@ public class Main {
 
         JavaConfig config = JavaConfig.builder()
                 .ifc2ImplClass(Speaker.class, ConsoleSpeaker.class)
+                .ifc2ImplClass(Cleaner.class, CleanerImpl.class)
                 .packagesToScan("my_spring")
                 .build();
 
